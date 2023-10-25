@@ -1,5 +1,7 @@
 # Changelog Script by Three Amigos
 
+![tam_changelog](https://raw.githubusercontent.com/ThreeAmigosModding/ThreeAmigosModding/main/img/tam_changelog.png)
+
 ## Installation
 
 Download the release of [ox_lib](https://github.com/overextended/ox_lib) from  & add it to your server or resources.cfg **BEFORE** `TAM_changelog`
