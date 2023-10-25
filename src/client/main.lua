@@ -1,8 +1,7 @@
 local changelogFile = LoadResourceFile(GetCurrentResourceName(), 'changelog.md')
 
 RegisterCommand('changelog', function()
-    --TriggerEvent('showChangelog')
-    print(changelogFile)
+    TriggerEvent('showChangelog')
 end, false)
 
 
@@ -19,4 +18,10 @@ RegisterNetEvent('showChangelog', function()
     })
 
     print(alert)
+end)
+
+CreateThread(function() 
+    if GetPlayerSwitchState() ~= 12 then
+        TriggerEvent('showChangelog')
+    end
 end)

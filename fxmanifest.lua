@@ -26,7 +26,3 @@ shared_scripts {
 client_scripts {
     'src/client/main.lua',
 }
-
-server_scripts {
-    'src/server/main.lua',
-}
