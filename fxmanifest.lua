@@ -6,7 +6,7 @@ game 'gta5'
 name 'tam_changelog'
 author 'Hakko'
 description 'Three Amigos Changelog'
-version '5.2.6'
+version '1.0.0'
 
 client_debug_mode 'false'
 server_debug_mode 'false'
