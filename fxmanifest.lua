@@ -26,3 +26,7 @@ shared_scripts {
 client_scripts {
     'src/client/main.lua',
 }
+
+escrow_ignore {
+    'src/client/main.lua'
+}
