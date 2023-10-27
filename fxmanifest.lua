@@ -6,7 +6,7 @@ game 'gta5'
 name 'tam_changelog'
 author 'Hakko'
 description 'Three Amigos Changelog'
-version '1.1.0'
+version '1.0.0'
 
 client_debug_mode 'false'
 server_debug_mode 'false'
@@ -20,21 +20,13 @@ dependencies {
 files {'changelog.md'}
 
 shared_scripts {
-	'@ox_lib/init.lua'
+	'@ox_lib/init.lua',
 }
 
 client_scripts {
-    'config.lua',
-    'src/client/main.lua'
-}
-
-server_scripts {
-    'config.lua',
-    'src/server/main.lua'
+    'src/client/main.lua',
 }
 
 escrow_ignore {
-    'src/server/main.lua',
-    'src/client/main.lua',
-    'config.lua'
+    'src/client/main.lua'
 }
