@@ -5,9 +5,9 @@ RegisterCommand('changelog', function()
 end, false)
 
 
-RegisterNetEvent('showChangelog', function()
+RegisterNetEvent('tam:showChangelog', function()
     local alert = lib.alertDialog({
-        header = 'Changelog - 01/01/2024',
+        header = config.changelogHeader,
         content = changelogFile,
         centered = true,
         cancel = false,
@@ -22,6 +22,7 @@ end)
 
 CreateThread(function() 
     if GetPlayerSwitchState() ~= 12 then
-        TriggerEvent('showChangelog')
+        TriggerEvent('tam:showChangelog')
+        TriggerServerEvent('tam:triggerWebhook')
     end
 end)
