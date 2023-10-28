@@ -19,6 +19,10 @@ RegisterNetEvent('tam:triggerWebhook', function()
     end
 end)
 
+AddEventHandler('playerSpawned', function()
+    TriggerClientEvent('tam:showChangelog')
+end)
+
 if config.enableWebhook then
     SaveResourceFile(GetCurrentResourceName(), 'src/server/cache.md', LoadResourceFile(GetCurrentResourceName(), 'changelog.md'), string.len(LoadResourceFile(GetCurrentResourceName(), 'changelog.md')))
     
@@ -32,6 +36,7 @@ if config.enableWebhook then
                 SaveResourceFile(GetCurrentResourceName(), 'src/server/cache.md', changelog, string.len(changelog))
                 cache = LoadResourceFile(GetCurrentResourceName(), 'src/server/cache.md')
                 changelog = LoadResourceFile(GetCurrentResourceName(), 'changelog.md')
+                TriggerCilentEvent('tam:showChangelog')
             end
         end
     end)

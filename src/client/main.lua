@@ -20,8 +20,13 @@ RegisterNetEvent('tam:showChangelog', function()
     print(alert)
 end)
 
-CreateThread(function() 
-    if GetPlayerSwitchState() ~= 12 then
+
+CreateThread(function()
+    if GetResourceState('qb-core') == 'started' then
+        AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
+            TriggerEvent('tam:showChangelog')
+        end)
+    elseif GetPlayerSwitchState() ~= 12 then
         TriggerEvent('tam:showChangelog')
     end
 end)
