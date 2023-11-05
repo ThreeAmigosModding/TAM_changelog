@@ -1,9 +1,18 @@
 local changelogFile = LoadResourceFile(GetCurrentResourceName(), 'changelog.md')
+local display = true
+
 
 RegisterCommand('changelog', function()
-    TriggerEvent('showChangelog')
+    TriggerEvent('tam:showChangelog')
 end, false)
 
+exports('showChangelog', function(show)
+    if show then
+        display = true
+    elseif not show then
+        display = false
+    end
+end)
 
 RegisterNetEvent('tam:showChangelog', function()
     local alert = lib.alertDialog({
@@ -16,8 +25,9 @@ RegisterNetEvent('tam:showChangelog', function()
             confirm = 'Close'
         }
     })
-
-    print(alert)
+    if display then
+        print(alert)
+    end
 end)
 
 
